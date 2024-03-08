@@ -1,0 +1,227 @@
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 9px;
+  --background-color: #f0f8ff;
+  --text-color: black;
+  --header-footer: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(145, 129, 241, 1) 31%,
+    rgba(120, 104, 217, 1) 73%,
+    rgba(95, 77, 207, 1) 100%
+  );
+  --a-link: white;
+  --a-visited: #b80792;
+  --a-hover: #9806b6;
+  --a-active: #6b55e8;
+  --hire: #bcd9f2;
+  --page-background-color-night: black;
+  --page-text-color-night: white;
+}
+
+*::selection {
+  background-color: var(--a-active);
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 3.3rem;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+}
+
+p,
+li,
+a {
+  font-size: 1.8rem;
+}
+
+.header {
+  background: var(--header-footer);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+#hire-me {
+  background-color: var(--hire);
+  color: var(--text-color);
+  position: absolute;
+  padding: 1rem;
+  top: 1.4rem;
+  right: 1.4rem;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  transform-origin: 100% 0;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.header:hover #hire-me,
+.header:focus-within #hire-me {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+#hire-me:hover {
+  background-color: #cadbea;
+}
+
+@media screen and (min-width: 992px) {
+  #hire-me {
+    position: fixed;
+  }
+}
+
+@media print {
+  .navigation {
+    display: none;
+  }
+
+  #hire-me {
+    display: none;
+  }
+}
+
+.main {
+  max-width: 130ch;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.article-heading {
+  position: relative;
+  left: -1.3rem;
+}
+
+nav > a {
+  padding: 1rem 1.6rem;
+}
+
+nav > a:link {
+  color: var(--a-link);
+}
+
+nav > a:visited {
+  color: var(--a-visited);
+}
+
+nav > a:hover {
+  color: var(--a-hover);
+}
+
+nav > a:active {
+  background-color: var(--a-active);
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-link {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link:focus {
+  background-color: var(--hire);
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+main > * + * {
+  margin-top: 7rem;
+}
+
+main > article {
+  border-top: 2px solid white;
+}
+
+article:first-child {
+  border-top: none;
+}
+
+.work::after {
+  content: "💻";
+  padding-left: 0.5rem;
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .experience-header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+
+#footer {
+  background: var(--header-footer);
+  text-align: center;
+  margin-top: 2rem;
+}
+.footer-text {
+  display: inline-block;
+  padding: 1rem 0.1rem;
+}
+#footer > a {
+  padding: 0.5rem;
+}
+#footer > a:link {
+  color: var(--a-link);
+}
+
+#footer > a:visited {
+  color: var(--a-visited);
+}
+
+#footer > a:hover {
+  color: var(--a-hover);
+}
+
+#footer > a:active {
+  background-color: var(--a-active);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--page-background-color-night);
+    color: var(--page-text-color-night);
+  }
+}
